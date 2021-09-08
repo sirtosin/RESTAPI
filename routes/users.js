@@ -2,34 +2,34 @@ const express = require("express");
 const router = express.Router();
 // Load User model
 const User = require("../models/User");
-const multer = require("multer");
+//const multer = require("multer");
 
 //define storage for the images
 
-const storage = multer.diskStorage({
-  //destination for files
-  destination: function (request, file, callback) {
-    callback(null, "./public/uploads/images");
-  },
+// const storage = multer.diskStorage({
+//   //destination for files
+//   destination: function (request, file, callback) {
+//     callback(null, "./public/uploads/images");
+//   },
 
-  //add back the extension
-  filename: function (request, file, callback) {
-    callback(null, Date.now() + file.originalname);
-  },
-});
+//   //add back the extension
+//   filename: function (request, file, callback) {
+//     callback(null, Date.now() + file.originalname);
+//   },
+// });
 
-//upload parameters for multer
-const upload = multer({
-  storage: storage,
-  limits: {
-    fieldSize: 1024 * 1024 * 3,
-  },
-});
+// //upload parameters for multer
+// const upload = multer({
+//   storage: storage,
+//   limits: {
+//     fieldSize: 1024 * 1024 * 3,
+//   },
+// });
 
 // add product
-router.post("/item", upload.single("image"), async (req, res) => {
-  const { name, desc, price, qty, inCart } = req.body;
-  const image = req.file.filename;
+router.post("/item", async (req, res) => {
+  const { name, desc, price, image, qty, inCart } = req.body;
+  //const image = req.file.filename;
   console.log(req.body);
 
   const newUser = new User({

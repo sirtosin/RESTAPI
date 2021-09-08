@@ -27,7 +27,7 @@ app.set("view engine", "ejs");
 
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
-//app.use(express.json());
+app.use(express.json());
 app.use(cors());
 
 // Method override
