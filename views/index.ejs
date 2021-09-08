@@ -1,0 +1,30 @@
+<div class="row center">
+    <h2>Input product</h2>
+
+    <form action="/product/item" method="POST" enctype="multipart/form-data" class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+
+                <input id="name" name="name" type="text" value="<%= typeof name != 'undefined' ? name : '' %>"
+                    class="validate">
+                <label for="name"> name</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="image" name="image" type="file">
+                <label for="image">profile picture</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="price" name="price" type="text" value="<%= typeof price != 'undefined' ? price : '' %>"
+                    class="validate">
+                <label for="price"> price</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="desc" name="desc" type="text" value="<%= typeof desc != 'undefined' ? desc : '' %>"
+                    class="validate">
+                <label for="desc"> description</label>
+            </div>
+        </div>
+        <button type="submit" class="btn green ">ADD</button>
+    </form>
+
+</div>

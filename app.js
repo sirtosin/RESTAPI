@@ -1,5 +1,5 @@
 const express = require("express");
-//const expressLayouts = require("express-ejs-layouts");
+const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const cors = require("cors");
 var methodOverride = require("method-override");
@@ -19,15 +19,15 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 // // EJS
-// app.use(expressLayouts);
-// app.set("view engine", "ejs");
+app.use(expressLayouts);
+app.set("view engine", "ejs");
 
 // Express body parser
-//app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+//app.use(express.json());
 app.use(cors());
 
 // Method override
