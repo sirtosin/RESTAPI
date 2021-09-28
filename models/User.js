@@ -7,10 +7,6 @@ const UserSchema = new mongoose.Schema({
   desc: {
     type: String,
   },
-  inCart: {
-    type: Boolean,
-    default: false,
-  },
   image: {
     type: String,
   },
